@@ -29,19 +29,14 @@ struct InventoryList: View {
                 }.padding()
             }
             .navigationBarTitle(Text("Your Items"))
-            .navigationBarItems(leading:
+            .navigationBarItems(trailing:
                 Button(action: {}){
                     Image(systemName: "square.and.arrow.up")
-                },
-                                trailing: Button(action: {
-                                    self.showAddPopover = true
-                                }){
-                                    Image(systemName: "plus")
-                                }
-                                .sheet(isPresented: $showAddPopover) {
-                                    ItemEditor(showSheet: self.$showAddPopover).environment(\.managedObjectContext, self.moc)
                 }
             )
+                .sheet(isPresented: $showAddPopover) {
+                    ItemEditor(showSheet: self.$showAddPopover).environment(\.managedObjectContext, self.moc)
+            }
         }
     }
     
@@ -49,6 +44,7 @@ struct InventoryList: View {
         for index in offsets {
             let inventoryItem = inventoryList[index]
             moc.delete(inventoryItem)
+            try! moc.save()
         }
     }
 }

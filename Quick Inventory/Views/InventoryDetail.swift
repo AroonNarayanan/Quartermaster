@@ -15,7 +15,7 @@ struct InventoryDetail: View {
         VStack{
             VStack {
                 Text(inventoryItem.itemDescription ?? "")
-                Text(inventoryItem.location ?? "")
+                Text(inventoryItem.location?.name ?? "")
                 Spacer()
             }
             Text(createDateFormatter(inventoryItem: inventoryItem))

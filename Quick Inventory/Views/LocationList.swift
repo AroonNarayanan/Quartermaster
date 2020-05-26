@@ -15,11 +15,16 @@ struct LocationList: View {
     
     var body: some View {
         NavigationView {
+            VStack {
             List {
                 ForEach(locationList, id: \.id) { location in
                     LocationRow(location: location)
                 }
-                .onDelete(perform: deleteItem)
+                .onDelete(perform: deleteLocation)
+            }
+                Button("New Location") {
+                    self.showAddPopover = true
+                }.padding()
             }
             .navigationBarTitle(Text("Your Locations"))
             .navigationBarItems( trailing: Button(action: {
@@ -33,10 +38,11 @@ struct LocationList: View {
         } .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    func deleteItem(at offsets: IndexSet) {
+    func deleteLocation(at offsets: IndexSet) {
         for index in offsets {
             let location = locationList[index]
             moc.delete(location)
+            try! moc.save()
         }
     }
 }
