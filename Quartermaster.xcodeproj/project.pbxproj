@@ -10,22 +10,39 @@
 		C0F19E64247C8AA100BF13A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E63247C8AA100BF13A3 /* AppDelegate.swift */; };
 		C0F19E66247C8AA100BF13A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E65247C8AA100BF13A3 /* SceneDelegate.swift */; };
 		C0F19E69247C8AA100BF13A3 /* Quick_Inventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E67247C8AA100BF13A3 /* Quick_Inventory.xcdatamodeld */; };
-		C0F19E6B247C8AA100BF13A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E6A247C8AA100BF13A3 /* ContentView.swift */; };
+		C0F19E6B247C8AA100BF13A3 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E6A247C8AA100BF13A3 /* InventoryList.swift */; };
 		C0F19E6D247C8AA400BF13A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F19E6C247C8AA400BF13A3 /* Assets.xcassets */; };
 		C0F19E70247C8AA400BF13A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F19E6F247C8AA400BF13A3 /* Preview Assets.xcassets */; };
 		C0F19E73247C8AA400BF13A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F19E71247C8AA400BF13A3 /* LaunchScreen.storyboard */; };
+		C0F19E7D247C8BB900BF13A3 /* InventoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E7C247C8BB900BF13A3 /* InventoryRow.swift */; };
+		C0F19E7F247C923B00BF13A3 /* ItemEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E7E247C923B00BF13A3 /* ItemEditor.swift */; };
+		C0F19E82247C975400BF13A3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E81247C975400BF13A3 /* Utils.swift */; };
+		C0F19E84247C9A1000BF13A3 /* InventoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E83247C9A1000BF13A3 /* InventoryDetail.swift */; };
+		C0F19E86247CA53C00BF13A3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E85247CA53C00BF13A3 /* MainView.swift */; };
+		C0F19E88247CA84900BF13A3 /* LocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E87247CA84900BF13A3 /* LocationList.swift */; };
+		C0F19E8A247CA8D000BF13A3 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E89247CA8D000BF13A3 /* LocationRow.swift */; };
+		C0F19E8C247CA8E000BF13A3 /* LocationEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E8B247CA8E000BF13A3 /* LocationEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C0F19E60247C8AA100BF13A3 /* Quick Inventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick Inventory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0F19E60247C8AA100BF13A3 /* Quartermaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quartermaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F19E63247C8AA100BF13A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F19E65247C8AA100BF13A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C0F19E68247C8AA100BF13A3 /* Quick_Inventory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quick_Inventory.xcdatamodel; sourceTree = "<group>"; };
-		C0F19E6A247C8AA100BF13A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0F19E6A247C8AA100BF13A3 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
 		C0F19E6C247C8AA400BF13A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0F19E6F247C8AA400BF13A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0F19E72247C8AA400BF13A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0F19E74247C8AA400BF13A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0F19E7C247C8BB900BF13A3 /* InventoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryRow.swift; sourceTree = "<group>"; };
+		C0F19E7E247C923B00BF13A3 /* ItemEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditor.swift; sourceTree = "<group>"; };
+		C0F19E80247C96EA00BF13A3 /* Quartermaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quartermaster.entitlements; sourceTree = "<group>"; };
+		C0F19E81247C975400BF13A3 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C0F19E83247C9A1000BF13A3 /* InventoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDetail.swift; sourceTree = "<group>"; };
+		C0F19E85247CA53C00BF13A3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C0F19E87247CA84900BF13A3 /* LocationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationList.swift; sourceTree = "<group>"; };
+		C0F19E89247CA8D000BF13A3 /* LocationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
+		C0F19E8B247CA8E000BF13A3 /* LocationEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +67,7 @@
 		C0F19E61247C8AA100BF13A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0F19E60247C8AA100BF13A3 /* Quick Inventory.app */,
+				C0F19E60247C8AA100BF13A3 /* Quartermaster.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,9 +75,11 @@
 		C0F19E62247C8AA100BF13A3 /* Quick Inventory */ = {
 			isa = PBXGroup;
 			children = (
+				C0F19E80247C96EA00BF13A3 /* Quartermaster.entitlements */,
+				C0F19E7B247C8B7200BF13A3 /* Source */,
+				C0F19E7A247C8B6800BF13A3 /* Views */,
 				C0F19E63247C8AA100BF13A3 /* AppDelegate.swift */,
 				C0F19E65247C8AA100BF13A3 /* SceneDelegate.swift */,
-				C0F19E6A247C8AA100BF13A3 /* ContentView.swift */,
 				C0F19E6C247C8AA400BF13A3 /* Assets.xcassets */,
 				C0F19E71247C8AA400BF13A3 /* LaunchScreen.storyboard */,
 				C0F19E74247C8AA400BF13A3 /* Info.plist */,
@@ -78,12 +97,35 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C0F19E7A247C8B6800BF13A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0F19E7C247C8BB900BF13A3 /* InventoryRow.swift */,
+				C0F19E6A247C8AA100BF13A3 /* InventoryList.swift */,
+				C0F19E7E247C923B00BF13A3 /* ItemEditor.swift */,
+				C0F19E83247C9A1000BF13A3 /* InventoryDetail.swift */,
+				C0F19E85247CA53C00BF13A3 /* MainView.swift */,
+				C0F19E87247CA84900BF13A3 /* LocationList.swift */,
+				C0F19E89247CA8D000BF13A3 /* LocationRow.swift */,
+				C0F19E8B247CA8E000BF13A3 /* LocationEditor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0F19E7B247C8B7200BF13A3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C0F19E81247C975400BF13A3 /* Utils.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C0F19E5F247C8AA100BF13A3 /* Quick Inventory */ = {
+		C0F19E5F247C8AA100BF13A3 /* Quartermaster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0F19E77247C8AA400BF13A3 /* Build configuration list for PBXNativeTarget "Quick Inventory" */;
+			buildConfigurationList = C0F19E77247C8AA400BF13A3 /* Build configuration list for PBXNativeTarget "Quartermaster" */;
 			buildPhases = (
 				C0F19E5C247C8AA100BF13A3 /* Sources */,
 				C0F19E5D247C8AA100BF13A3 /* Frameworks */,
@@ -93,9 +135,9 @@
 			);
 			dependencies = (
 			);
-			name = "Quick Inventory";
+			name = Quartermaster;
 			productName = "Quick Inventory";
-			productReference = C0F19E60247C8AA100BF13A3 /* Quick Inventory.app */;
+			productReference = C0F19E60247C8AA100BF13A3 /* Quartermaster.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -113,7 +155,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C0F19E5B247C8AA100BF13A3 /* Build configuration list for PBXProject "Quick Inventory" */;
+			buildConfigurationList = C0F19E5B247C8AA100BF13A3 /* Build configuration list for PBXProject "Quartermaster" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C0F19E5F247C8AA100BF13A3 /* Quick Inventory */,
+				C0F19E5F247C8AA100BF13A3 /* Quartermaster */,
 			);
 		};
 /* End PBXProject section */
@@ -150,8 +192,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F19E64247C8AA100BF13A3 /* AppDelegate.swift in Sources */,
+				C0F19E86247CA53C00BF13A3 /* MainView.swift in Sources */,
+				C0F19E84247C9A1000BF13A3 /* InventoryDetail.swift in Sources */,
+				C0F19E7F247C923B00BF13A3 /* ItemEditor.swift in Sources */,
+				C0F19E8A247CA8D000BF13A3 /* LocationRow.swift in Sources */,
+				C0F19E88247CA84900BF13A3 /* LocationList.swift in Sources */,
 				C0F19E66247C8AA100BF13A3 /* SceneDelegate.swift in Sources */,
-				C0F19E6B247C8AA100BF13A3 /* ContentView.swift in Sources */,
+				C0F19E8C247CA8E000BF13A3 /* LocationEditor.swift in Sources */,
+				C0F19E82247C975400BF13A3 /* Utils.swift in Sources */,
+				C0F19E7D247C8BB900BF13A3 /* InventoryRow.swift in Sources */,
+				C0F19E6B247C8AA100BF13A3 /* InventoryList.swift in Sources */,
 				C0F19E69247C8AA100BF13A3 /* Quick_Inventory.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +271,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -275,6 +326,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -288,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Quick Inventory/Quartermaster.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Quick Inventory/Preview Content\"";
 				DEVELOPMENT_TEAM = H772T9VEX6;
@@ -297,8 +350,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aroonnarayanan.Quick-Inventory";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aroonnarayanan.quartermaster;
+				PRODUCT_NAME = Quartermaster;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Quick Inventory/Quartermaster.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Quick Inventory/Preview Content\"";
 				DEVELOPMENT_TEAM = H772T9VEX6;
@@ -317,8 +372,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aroonnarayanan.Quick-Inventory";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aroonnarayanan.quartermaster;
+				PRODUCT_NAME = Quartermaster;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -327,7 +383,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C0F19E5B247C8AA100BF13A3 /* Build configuration list for PBXProject "Quick Inventory" */ = {
+		C0F19E5B247C8AA100BF13A3 /* Build configuration list for PBXProject "Quartermaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0F19E75247C8AA400BF13A3 /* Debug */,
@@ -336,7 +392,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0F19E77247C8AA400BF13A3 /* Build configuration list for PBXNativeTarget "Quick Inventory" */ = {
+		C0F19E77247C8AA400BF13A3 /* Build configuration list for PBXNativeTarget "Quartermaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0F19E78247C8AA400BF13A3 /* Debug */,
