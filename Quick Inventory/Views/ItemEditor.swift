@@ -11,7 +11,7 @@ import SwiftUI
 struct ItemEditor: View {
     @Environment(\.managedObjectContext) var moc
     
-//    private var inventoryItem: InventoryItem
+    //    private var inventoryItem: InventoryItem
     @Binding var showSheet: Bool
     
     @State private var name: String = ""
@@ -19,18 +19,22 @@ struct ItemEditor: View {
     @State private var showAlert = false
     @State private var locationIndex = 0
     @State private var locationName = ""
-        
+    
+    @State private var attributes: Dictionary<String, String> = [:]
+    @State private var attributeKey = ""
+    @State private var attributeValue = ""
+    
     @FetchRequest(entity: Location.entity(), sortDescriptors: []) var locationList: FetchedResults<Location>
     
-//    init(inventoryItem: InventoryItem, showSheet: Binding<Bool>) {
-//        self.inventoryItem = inventoryItem
-//        self._showSheet = showSheet
-//        self.name = inventoryItem.name ?? ""
-//        self.description = inventoryItem.description
-//    }
-//
+    //    init(inventoryItem: InventoryItem, showSheet: Binding<Bool>) {
+    //        self.inventoryItem = inventoryItem
+    //        self._showSheet = showSheet
+    //        self.name = inventoryItem.name ?? ""
+    //        self.description = inventoryItem.description
+    //    }
+    //
     init(showSheet: Binding<Bool>) {
-//        self.inventoryItem = InventoryItem(context: self.moc)
+        //        self.inventoryItem = InventoryItem(context: self.moc)
         self._showSheet = showSheet
     }
     
@@ -43,6 +47,21 @@ struct ItemEditor: View {
                         TextField("Item Description", text: $description)
                 }
                 self.locationPicker()
+                Section(header: Text("Attributes")) {
+                    ForEach(attributes.sorted(by: >), id: \.key) { key, value in
+                        HStack {
+                            Text(key)
+                            Text(value)
+                        }
+                    }
+                    HStack {
+                        TextField("Attribute Name", text: $attributeKey)
+                        TextField("Attribute Value", text: $attributeValue)
+                    }
+                    Button("Add Attribute") {
+                        self.addAttribute()
+                    }
+                }
             }
             .navigationBarTitle(Text("New Item"))
             .navigationBarItems(leading: Button("Close") {
@@ -57,6 +76,22 @@ struct ItemEditor: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
+    func addAttribute() {
+        if (self.attributeKey.count > 0) {
+            self.attributes[self.attributeKey] = self.attributeValue
+            self.attributeKey = ""
+            self.attributeValue = ""
+        }
+    }
+    
+    func saveAttribute(attributeKey: String, attributeValue: String, inventoryItemId: UUID) {
+        let attribute = InventoryAttribute(context: self.moc)
+        attribute.id = UUID()
+        attribute.itemId = inventoryItemId
+        attribute.key = attributeKey
+        attribute.value = attributeValue
+    }
+    
     func saveItem() {
         let inventoryItem = InventoryItem(context: self.moc)
         inventoryItem.id = UUID()
@@ -66,6 +101,9 @@ struct ItemEditor: View {
             inventoryItem.location = self.locationList[self.locationIndex]
         }
         inventoryItem.dateCreated = Date()
+        self.attributes.forEach { key, value in
+            self.saveAttribute(attributeKey: key, attributeValue: value, inventoryItemId: inventoryItem.id!)
+        }
         do {
             try self.moc.save()
             self.showSheet.toggle()
