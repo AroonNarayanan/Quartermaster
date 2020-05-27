@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct LocationEditor: View {
-    @State private var name: String = ""
-    @State private var showAlert = false
-    
-    @Environment(\.presentationMode) var presentation
     @Environment(\.managedObjectContext) var moc
     
+    @Binding var showSheet: Bool
+    
+    @State private var name: String = ""
+    @State private var showAlert = false
+        
     var body: some View {
         NavigationView {
             Form {
@@ -23,28 +24,34 @@ struct LocationEditor: View {
                 }
             }
             .navigationBarTitle(Text("New Location"))
-            .navigationBarItems(trailing: Button("Save"){
-                let location = Location(context: self.moc)
-                location.id = UUID()
-                location.name = self.name
-                do {
-                    try self.moc.save()
-                    self.presentation.wrappedValue.dismiss()
-                } catch {
-                    print(error)
-                    self.showAlert = true
-                }
+            .navigationBarItems(leading: Button("Close") {
+                self.showSheet.toggle()
+                },trailing: Button("Save"){
+                    self.saveLocation()
             })
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Error saving location - please try again."))
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Error saving location - please try again."))
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    func saveLocation() {
+        let location = Location(context: self.moc)
+        location.id = UUID()
+        location.name = self.name
+        do {
+            try self.moc.save()
+            self.showSheet.toggle()
+        } catch {
+            print(error)
+            self.showAlert = true
+        }
     }
 }
 
 struct LocationEditor_Previews: PreviewProvider {
     static var previews: some View {
-        LocationEditor()
+        LocationEditor(showSheet: .constant(true))
     }
 }

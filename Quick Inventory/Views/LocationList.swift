@@ -27,15 +27,11 @@ struct LocationList: View {
                 }.padding()
             }
             .navigationBarTitle(Text("Your Locations"))
-            .navigationBarItems( trailing: Button(action: {
-                self.showAddPopover = true
-            }){
-                Image(systemName: "plus")
-            }.sheet(isPresented: $showAddPopover) {
-                LocationEditor().environment(\.managedObjectContext, self.moc)
-                }
-            )
-        } .navigationViewStyle(StackNavigationViewStyle())
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .sheet(isPresented: $showAddPopover) {
+        LocationEditor(showSheet: self.$showAddPopover).environment(\.managedObjectContext, self.moc)
+        }
     }
     
     func deleteLocation(at offsets: IndexSet) {

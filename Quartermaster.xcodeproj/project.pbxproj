@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68025EECDD9537E07F252C1F /* Pods_Quartermaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFDEC5C84B6B65317D44CA0 /* Pods_Quartermaster.framework */; };
 		C0F19E64247C8AA100BF13A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E63247C8AA100BF13A3 /* AppDelegate.swift */; };
 		C0F19E66247C8AA100BF13A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E65247C8AA100BF13A3 /* SceneDelegate.swift */; };
 		C0F19E69247C8AA100BF13A3 /* Quick_Inventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0F19E67247C8AA100BF13A3 /* Quick_Inventory.xcdatamodeld */; };
@@ -25,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AFDEC5C84B6B65317D44CA0 /* Pods_Quartermaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quartermaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6390EA598B82C4760BB16FA7 /* Pods-Quartermaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quartermaster.debug.xcconfig"; path = "Target Support Files/Pods-Quartermaster/Pods-Quartermaster.debug.xcconfig"; sourceTree = "<group>"; };
+		A1EF55A99285E2B4EA4FCA8C /* Pods-Quartermaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quartermaster.release.xcconfig"; path = "Target Support Files/Pods-Quartermaster/Pods-Quartermaster.release.xcconfig"; sourceTree = "<group>"; };
 		C0F19E60247C8AA100BF13A3 /* Quartermaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quartermaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F19E63247C8AA100BF13A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F19E65247C8AA100BF13A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,17 +54,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68025EECDD9537E07F252C1F /* Pods_Quartermaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156F360E53DB563406207567 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6390EA598B82C4760BB16FA7 /* Pods-Quartermaster.debug.xcconfig */,
+				A1EF55A99285E2B4EA4FCA8C /* Pods-Quartermaster.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8D683407B1508F82D338D476 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AFDEC5C84B6B65317D44CA0 /* Pods_Quartermaster.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C0F19E57247C8AA100BF13A3 = {
 			isa = PBXGroup;
 			children = (
 				C0F19E62247C8AA100BF13A3 /* Quick Inventory */,
 				C0F19E61247C8AA100BF13A3 /* Products */,
+				156F360E53DB563406207567 /* Pods */,
+				8D683407B1508F82D338D476 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0F19E77247C8AA400BF13A3 /* Build configuration list for PBXNativeTarget "Quartermaster" */;
 			buildPhases = (
+				6F9265A1CD96D5AE60E580E2 /* [CP] Check Pods Manifest.lock */,
 				C0F19E5C247C8AA100BF13A3 /* Sources */,
 				C0F19E5D247C8AA100BF13A3 /* Frameworks */,
 				C0F19E5E247C8AA100BF13A3 /* Resources */,
+				2D66E6F1908C18AAD9BDAF5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +212,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D66E6F1908C18AAD9BDAF5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quartermaster/Pods-Quartermaster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quartermaster/Pods-Quartermaster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quartermaster/Pods-Quartermaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F9265A1CD96D5AE60E580E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quartermaster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0F19E5C247C8AA100BF13A3 /* Sources */ = {
@@ -338,6 +407,7 @@
 		};
 		C0F19E78247C8AA400BF13A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6390EA598B82C4760BB16FA7 /* Pods-Quartermaster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Quick Inventory/Quartermaster.entitlements";
@@ -360,6 +430,7 @@
 		};
 		C0F19E79247C8AA400BF13A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1EF55A99285E2B4EA4FCA8C /* Pods-Quartermaster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Quick Inventory/Quartermaster.entitlements";

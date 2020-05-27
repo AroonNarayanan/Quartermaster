@@ -10,7 +10,12 @@ import SwiftUI
 
 struct InventoryList: View {
     @State private var showAddPopover: Bool = false
+    @State private var showShareSheet: Bool = false
+    @State private var showAlert: Bool = false
+    @State private var shareURL: URL?
+    
     @Environment(\.managedObjectContext) var moc
+    
     @FetchRequest(entity: InventoryItem.entity(), sortDescriptors: []) var inventoryList: FetchedResults<InventoryItem>
     
     var body: some View {
@@ -30,8 +35,22 @@ struct InventoryList: View {
             }
             .navigationBarTitle(Text("Your Items"))
             .navigationBarItems(trailing:
-                Button(action: {}){
+                Button(action: {
+                    do {
+                        try self.shareURL = createCSVFile(inventoryList: self.inventoryList)
+                        self.showShareSheet = true
+                    } catch {
+                        print(error)
+                        self.showAlert = true
+                    }
+                }){
                     Image(systemName: "square.and.arrow.up")
+                }
+                .sheet(isPresented: $showShareSheet){
+                    ShareSheet(sharing: [self.shareURL!])
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("We ran into an issue creating a file for you to share."))
                 }
             )
                 .sheet(isPresented: $showAddPopover) {
