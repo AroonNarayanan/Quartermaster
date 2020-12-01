@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -67,7 +67,6 @@
 				6390EA598B82C4760BB16FA7 /* Pods-Quartermaster.debug.xcconfig */,
 				A1EF55A99285E2B4EA4FCA8C /* Pods-Quartermaster.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -412,6 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Quick Inventory/Quartermaster.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Quick Inventory/Preview Content\"";
 				DEVELOPMENT_TEAM = H772T9VEX6;
 				ENABLE_PREVIEWS = YES;
@@ -420,6 +420,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aroonnarayanan.quartermaster;
 				PRODUCT_NAME = Quartermaster;
 				SUPPORTS_MACCATALYST = YES;
@@ -435,6 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Quick Inventory/Quartermaster.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Quick Inventory/Preview Content\"";
 				DEVELOPMENT_TEAM = H772T9VEX6;
 				ENABLE_PREVIEWS = YES;
@@ -443,6 +445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aroonnarayanan.quartermaster;
 				PRODUCT_NAME = Quartermaster;
 				SUPPORTS_MACCATALYST = YES;

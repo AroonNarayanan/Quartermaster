@@ -6,16 +6,17 @@
         <attribute name="tag" optional="YES" attributeType="String"/>
     </entity>
     <entity name="InventoryAttribute" representedClassName="InventoryAttribute" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="itemId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="key" optional="YES" attributeType="String"/>
         <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InventoryItem" inverseName="attributes" inverseEntity="InventoryItem"/>
     </entity>
     <entity name="InventoryItem" representedClassName="InventoryItem" syncable="YES" codeGenerationType="class">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="itemDescription" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="attributes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InventoryAttribute" inverseName="item" inverseEntity="InventoryAttribute"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="items" inverseEntity="Location"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
@@ -24,9 +25,9 @@
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InventoryItem" inverseName="location" inverseEntity="InventoryItem"/>
     </entity>
     <elements>
-        <element name="InventoryItem" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="InventoryItem" positionX="-54" positionY="-9" width="128" height="148"/>
         <element name="Location" positionX="-36" positionY="36" width="128" height="88"/>
-        <element name="InventoryAttribute" positionX="-45" positionY="45" width="128" height="103"/>
+        <element name="InventoryAttribute" positionX="-45" positionY="45" width="128" height="88"/>
         <element name="Entity" positionX="-36" positionY="54" width="128" height="88"/>
     </elements>
 </model>

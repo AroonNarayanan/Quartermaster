@@ -12,10 +12,13 @@ struct InventoryRow: View {
     var inventoryItem: InventoryItem
     
     var body: some View {
-        HStack {
-            Text(inventoryItem.name ?? "")
-            Spacer()
-        }
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(inventoryItem.name ?? "").font(.headline)
+                    Text("Quantity: \(String(inventoryItem.quantity))").font(.footnote)
+                }
+                Spacer()
+            }
     }
 }
 

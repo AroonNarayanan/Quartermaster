@@ -16,6 +16,7 @@ struct ItemEditor: View {
     
     @State private var name: String = ""
     @State private var description: String = ""
+    @State private var quantity: Int32 = 0
     @State private var showAlert = false
     @State private var locationIndex = 0
     @State private var locationName = ""
@@ -45,6 +46,7 @@ struct ItemEditor: View {
                     {
                         TextField("Item Name", text: $name)
                         TextField("Item Description", text: $description)
+                        Stepper("Quantity: \(String(self.quantity))", value: $quantity, in: 0...100)
                 }
                 self.locationPicker()
                 Section(header: Text("Attributes")) {
@@ -54,6 +56,8 @@ struct ItemEditor: View {
                             Text(value)
                         }
                     }
+                }
+                Section(header: Text("New Attribute")) {
                     HStack {
                         TextField("Attribute Name", text: $attributeKey)
                         TextField("Attribute Value", text: $attributeValue)
@@ -84,12 +88,19 @@ struct ItemEditor: View {
         }
     }
     
-    func saveAttribute(attributeKey: String, attributeValue: String, inventoryItemId: UUID) {
-        let attribute = InventoryAttribute(context: self.moc)
-        attribute.id = UUID()
-        attribute.itemId = inventoryItemId
-        attribute.key = attributeKey
-        attribute.value = attributeValue
+    func saveAttribute(attributeKey: String, attributeValue: String, inventoryItemId: UUID) -> InventoryAttribute {
+            let attribute = InventoryAttribute(context: self.moc)
+            attribute.key = attributeKey
+            attribute.value = attributeValue
+            return attribute
+    }
+    
+    func getAttribute(attributeKey: String) -> InventoryAttribute? {
+        let fetchRequest = FetchRequest<InventoryAttribute>(entity: InventoryAttribute.entity(), sortDescriptors: [], predicate: NSPredicate(format: "%K == %@", #keyPath(InventoryAttribute.key), attributeKey))
+        if (fetchRequest.wrappedValue.count) > 0 {
+            return fetchRequest.wrappedValue[0]
+        }
+        return nil
     }
     
     func saveItem() {
@@ -97,12 +108,13 @@ struct ItemEditor: View {
         inventoryItem.id = UUID()
         inventoryItem.name = self.name
         inventoryItem.itemDescription = self.description
+        inventoryItem.quantity = self.quantity
         if (self.locationList.count > 0) {
             inventoryItem.location = self.locationList[self.locationIndex]
         }
         inventoryItem.dateCreated = Date()
         self.attributes.forEach { key, value in
-            self.saveAttribute(attributeKey: key, attributeValue: value, inventoryItemId: inventoryItem.id!)
+            inventoryItem.addToAttributes(self.saveAttribute(attributeKey: key, attributeValue: value, inventoryItemId: inventoryItem.id!))
         }
         do {
             try self.moc.save()

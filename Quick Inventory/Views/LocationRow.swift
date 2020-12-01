@@ -13,7 +13,10 @@ struct LocationRow: View {
     
     var body: some View {
         HStack {
-            Text(location.name ?? "")
+            VStack(alignment: .leading) {
+                Text(location.name ?? "").font(.headline)
+                Text("Items: \(location.items?.count ?? 0)").font(.footnote)
+            }
             Spacer()
         }
     }

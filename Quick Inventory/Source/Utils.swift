@@ -43,10 +43,10 @@ func createCSVFile(inventoryList: FetchedResults<InventoryItem>) throws -> URL {
     let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
     let csvStream = OutputStream(toFileAtPath: fileURL.path, append: false)
     let csv = try CSVWriter(stream: csvStream!)
-    try csv.write(row: ["Item ID", "Item Name", "Item Description", "Item Location", "Date Created"])
+    try csv.write(row: ["Item ID", "Quantity", "Item Name", "Item Description", "Item Location", "Date Created"])
     dateFormatter.dateFormat = "MM/dd/yyyy h:mm:ss a"
     try inventoryList.forEach { inventoryItem in
-        try csv.write(row: [inventoryItem.id?.uuidString ?? "", inventoryItem.name ?? "", inventoryItem.itemDescription ?? "", inventoryItem.location?.name ?? "", dateFormatter.string(from: inventoryItem.dateCreated ?? Date())])
+        try csv.write(row: [inventoryItem.id?.uuidString ?? "", String(inventoryItem.quantity), inventoryItem.name ?? "", inventoryItem.itemDescription ?? "", inventoryItem.location?.name ?? "", dateFormatter.string(from: inventoryItem.dateCreated ?? Date())])
     }
     csv.stream.close()
     return fileURL
